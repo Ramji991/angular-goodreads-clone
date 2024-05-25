@@ -1,0 +1,25 @@
+<!-- home.component.html -->
+<div class="home-container">
+    <h2>Welcome to Our Bookstore!</h2>
+    <p>Discover your next favorite book.</p>
+
+    <div *ngIf="loading" class="spinner">Loading...</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div class="featured-books" *ngIf="featuredBooks.length > 0">
+        <h3>Featured Books</h3>
+        <ul class="book-main">
+            <li *ngFor="let book of featuredBooks" class="book">
+                <div class="img-cont">
+                    <img [src]="book.coverImage" alt="{{ book.title }}" />
+                </div>
+                <div class="book-details">
+                    <h4>{{ book.title }}</h4>
+                    <p>{{ book.author }}</p>
+                    <p>{{ book.description }}</p>
+                    <button class="btn-det" (click)="viewDetails(book.id)">View Details</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

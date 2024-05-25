@@ -1,0 +1,111 @@
+/* book-details.component.css */
+.book-details-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.spinner {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.book-header {
+    display: flex;
+    align-items: center;
+}
+
+.book-header img {
+    width: 150px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.book-info h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.book-info h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.book-info p {
+    margin: 5px 0;
+}
+
+.book-reviews {
+    margin-top: 20px;
+}
+
+.review {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.add-review {
+    margin-top: 20px;
+}
+
+.add-review textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.add-review input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.add-review button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-review button:hover {
+    background-color: #0056b3;
+}
+
+.related-books {
+    margin-top: 20px;
+}
+
+.related-books ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.related-books li {
+    width: 150px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.related-books img {
+    width: 100px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.related-books .book-info {
+    text-align: center;
+}

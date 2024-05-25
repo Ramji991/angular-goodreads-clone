@@ -1,0 +1,88 @@
+/* bookshelves.component.css */
+.bookshelves-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.bookshelves-actions {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.bookshelves-actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+}
+
+.bookshelves-actions button:hover {
+    background-color: #0056b3;
+}
+
+.bookshelf ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.book-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.book-cover {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.book-info {
+    flex-grow: 1;
+}
+
+.book-info h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.book-info p {
+    margin: 5px 0;
+}
+
+.book-info button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #dc3545;
+    color: #fff;
+    cursor: pointer;
+}
+
+.book-info button:hover {
+    background-color: #c82333;
+}
+
+.spinner {
+    text-align: center;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}
+
+.no-books {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+}

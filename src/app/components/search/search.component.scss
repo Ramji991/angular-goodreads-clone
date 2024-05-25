@@ -1,0 +1,57 @@
+/* search.component.css */
+.search-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.error {
+    color: red;
+}
+
+button {
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 40px;
+    padding: 0.5em 1em;
+}
+
+button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.search-results {
+    margin-top: 20px;
+}
+
+
+.book-details h4 {
+    margin-top: 0;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+}

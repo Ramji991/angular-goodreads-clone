@@ -1,0 +1,11 @@
+<!-- book-list.component.html -->
+<div class="book-list">
+    <div *ngFor="let book of books" class="book">
+        <img [src]="book.coverImage" alt="{{ book.title }}" />
+        <div class="book-details">
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+            <p>{{ book.description }}</p>
+        </div>
+    </div>
+</div>
