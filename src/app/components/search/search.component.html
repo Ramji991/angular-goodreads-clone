@@ -1,0 +1,33 @@
+<!-- search.component.html -->
+<div class="search-container">
+    <h2>Search Books</h2>
+    <form [formGroup]="searchForm" (ngSubmit)="onSearch()">
+        <div class="form-group">
+            <label for="query">Search Query</label>
+            <input id="query" formControlName="query" type="text" />
+            <div *ngIf="searchForm.get('query').invalid && searchForm.get('query').touched" class="error">Search query
+                is required</div>
+        </div>
+        <button type="submit" [disabled]="searchForm.invalid">Search</button>
+    </form>
+
+    <div *ngIf="loading" class="spinner">Loading...</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div class="search-results" *ngIf="searchResults.length > 0">
+        <h3>Search Results</h3>
+        <ul class="book-main">
+            <li *ngFor="let book of searchResults" class="book">
+                <div class="img-cont">
+                <img [src]="book.coverImage" alt="{{ book.title }}" />
+                </div>
+                <div class="book-details">
+                    <h4>{{ book.title }}</h4>
+                    <p>{{ book.author }}</p>
+                    <p>{{ book.description }}</p>
+                    <button class="btn-det" (click)="viewDetails(book.id)">View Details</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

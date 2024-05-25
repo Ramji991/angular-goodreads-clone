@@ -1,0 +1,29 @@
+<!-- bookshelves.component.html -->
+<div class="bookshelves-container">
+    <h2>My Bookshelves</h2>
+    <div *ngIf="loading" class="spinner">Loading...</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div class="bookshelves-actions">
+        <button (click)="getBooksByStatus('to-read')">To Read</button>
+        <button (click)="getBooksByStatus('currently-reading')">Currently Reading</button>
+        <button (click)="getBooksByStatus('read')">Read</button>
+    </div>
+
+    <div class="bookshelf" *ngIf="bookshelves.length > 0">
+        <ul>
+            <li *ngFor="let book of bookshelves">
+                <div class="book-card">
+                    <img [src]="book.coverImage" alt="{{ book.title }}" class="book-cover" />
+                    <div class="book-info">
+                        <h4>{{ book.title }}</h4>
+                        <p>{{ book.author }}</p>
+                        <p>Status: {{ book.status }}</p>
+                        <button (click)="removeBookFromShelf(book.id)">Remove</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div *ngIf="bookshelves.length === 0 && !loading" class="no-books">No books found.</div>
+</div>

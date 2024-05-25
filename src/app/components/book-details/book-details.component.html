@@ -1,0 +1,50 @@
+<!-- book-details.component.html -->
+<div class="book-details-container" *ngIf="book">
+    <div *ngIf="loading" class="spinner">Loading...</div>
+    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <div class="book-header">
+        <img [src]="book.coverImage" alt="{{ book.title }}" />
+        <div class="book-info">
+            <h2>{{ book.title }}</h2>
+            <h3>{{ book.author }}</h3>
+            <p>Rating: {{ book.averageRating }}</p>
+            <p>{{ book.description }}</p>
+        </div>
+    </div>
+
+    <div class="book-reviews">
+        <h3>Reviews</h3>
+        <div *ngFor="let review of book.reviews" class="review">
+            <p><strong>Rating:</strong> {{ review.rating }} / 5</p>
+            <p>{{ review.content }}</p>
+            <p><em>{{ review.date | date }}</em></p>
+        </div>
+    </div>
+
+    <div class="add-review">
+        <h3>Add a Review</h3>
+        <textarea [(ngModel)]="newReview" placeholder="Write your review"></textarea>
+        <input type="number" [(ngModel)]="newRating" min="1" max="5" placeholder="Rating (1-5)" />
+        <button (click)="addReview()">Submit Review</button>
+    </div>
+
+    <div class="related-books">
+        <h3>Related Books</h3>
+        <div *ngIf="relatedBooks.length > 0; else noRelatedBooks">
+            <ul>
+                <li *ngFor="let book of relatedBooks">
+                    <img [src]="book.coverImage" alt="{{ book.title }}" />
+                    <div class="book-info">
+                        <h4>{{ book.title }}</h4>
+                        <p>{{ book.author }}</p>
+                        <p>Rating: {{ book.averageRating }}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <ng-template #noRelatedBooks>
+            <p>No related books found.</p>
+        </ng-template>
+    </div>
+</div>
